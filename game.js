@@ -149,7 +149,7 @@ document.addEventListener("keypress",(e)=>{
         send(input.value)
         input.value = ''
     }
-    if (cur_y == 0||cur_x == 0) {
+    if (cur_y == 0||cur_x == 0||cur_x >= size-1||cur_y >= size-1) {
         send("end")
         send("-- You win! --")
     }
