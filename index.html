@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blind Maze Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="generator.js" defer></script>
+    <script src="game.js" defer></script>
+</head>
+<body style="background-color: black;">
+    <div></div>
+    <div class="right">
+        <div class="instructions">
+            <h1>Blind Maze</h1>
+            <span>
+                How to play:
+                <ul>
+                    <li>You start at a random point in the map.</li>
+                    <li>Figure out where you are by typing <span class="command">look</span>. This tells you the <span class="emp">cells to your left and right</span>.</li>
+                    <li>Type <span class="command">left</span> or <span class="command">right</span> to rotate.</li>
+                    <li>Type <span class="command">move</span> to move forward.</li>
+                    <li>Get to the <span class="emp">edge of the maze</span> to win.</li>
+                    <li>If you give up, you can type <span class="command">end</span> to show where you were on the map.</li>
+                    <li>You can also click anywhere on the map to <span class="command">mark</span> a cell.</li>
+                </ul>
+            </span>
+        </div>
+
+        <div class="control-history">
+            <div class="history">
+                <span class="message"></span>
+            </div>
+            <input type="text" class="command-input">
+        </div>
+    </div>
+    <div class="main">
+        <div class="container">
+            <canvas width="50" height="50" class="maze"></canvas>
+            <canvas width="50" height="50" class="marks"></canvas>
+        </div>
+    </div>
+</body>
+</html
