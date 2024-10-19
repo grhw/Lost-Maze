@@ -136,7 +136,7 @@ document.addEventListener("keypress",(e)=>{
         send("-- You win! --")
     }
 
-    if (input.value.length < 1) {
+    if (input != document.activeElement) {
         switch (e.code) {
             case ("KeyW"):
                 send("move")
