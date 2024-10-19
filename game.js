@@ -114,7 +114,11 @@ const commands = {
         } else {
             send("nothing on my left.");
         }
-}
+    },
+
+    "invert": ()=>{
+        canvas.parentElement.parentElement.classList.toggle("invert")
+    }
 }
 
 function send(v) {
