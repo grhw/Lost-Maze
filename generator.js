@@ -41,7 +41,7 @@ function shuffleArray(array) {
 
 function stepDraw(cur_x, cur_y) {
     visited[cur_x][cur_y] = true;
-    fillColor(cur_x * 2, cur_y * 2, "black");
+    fillColor(cur_x * 2, cur_y * 2, "white");
 
     const shuffledDirections = shuffleArray([...directions]);
 
@@ -51,7 +51,7 @@ function stepDraw(cur_x, cur_y) {
         const next_y = cur_y + move_y;
 
         if (isCellOK(next_x, next_y)) {
-            fillColor((cur_x * 2 + next_x * 2) / 2, (cur_y * 2 + next_y * 2) / 2, "black");
+            fillColor((cur_x * 2 + next_x * 2) / 2, (cur_y * 2 + next_y * 2) / 2, "white");
             stepDraw(next_x, next_y);
         }
     }
@@ -63,8 +63,7 @@ function stepDraw(cur_x, cur_y) {
 }
 
 function generateMaze() {
-    context.fillStyle = "white"
-    context.fillRect(0,0,50,50)
+    context.clearRect(0,0,50,50)
     allowed = {};
     stack = [];
     gridSize = (canvas.getAttribute("width")/2)+1;

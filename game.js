@@ -135,6 +135,23 @@ document.addEventListener("keypress",(e)=>{
         send("end")
         send("-- You win! --")
     }
+
+    if (input.value.length < 1) {
+        switch (e.code) {
+            case ("KeyW"):
+                send("move")
+                break;
+            case ("KeyA"):
+                send("left")
+                break;
+            case ("KeyD"):
+                send("right")
+                break;
+            case ("KeyL"):
+                send("look")
+                break;
+        }
+    }
 })
 
 send("restart")

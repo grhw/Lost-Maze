@@ -50,7 +50,7 @@ h1 {
 }
 
 .main {
-    background-color: black;
+    background-color: white;
     left: 0;
     width: calc(100vw - 620px);
     height: calc(100vh - 20px);
@@ -67,7 +67,7 @@ canvas {
 }
 
 .maze {
-    background-color: white;
+    background-color: black;
 }
 .marks {
     opacity: 0.5;
@@ -80,7 +80,6 @@ canvas {
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
-    border: 2px white solid;
 }
 
 @media screen and (min-width: calc(100vh + 500px)) {
