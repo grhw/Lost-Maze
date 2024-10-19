@@ -2,6 +2,7 @@ s = ()=>{
 var input = document.querySelector(".command-input")
 var msg_history = document.querySelector(".message")
 var canvas = document.querySelector(".main canvas.marks")
+var maze_canvas = document.querySelector(".main canvas.maze")
 var marks = canvas.getContext("2d", {
     willReadFrequently: true
 })
@@ -23,6 +24,8 @@ function isCellBlocked(x,y) {
 var cur_x = 25
 var cur_y = 25
 var dir = 0
+
+var size = 50
 
 function toRandomCell() {
     var plan_x = Math.floor(Math.random()*50)
@@ -63,6 +66,7 @@ const commands = {
         marks.clearRect(0,0,50,50)
         toRandomCell()
         send("Game started!")
+        size = canvas.getAttribute("width")
     },
     "move": ()=>{
         move = getLocFromDir(dir)
@@ -123,6 +127,20 @@ function send(v) {
             a += "<br>" + msg
         });
         msg_history.innerHTML = a
+    }
+
+    if (!isNaN(v)) {
+        if (v > 10) {
+            const set = Math.round(v/2)*2
+            canvas.setAttribute("width",set)
+            canvas.setAttribute("height",set)
+            maze_canvas.setAttribute("width",set)
+            maze_canvas.setAttribute("height",set)
+
+            send("restart")
+        } else {
+            send("Size has to be more than 10x10.")
+        }
     }
 }
 

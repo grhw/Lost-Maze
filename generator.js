@@ -63,10 +63,10 @@ function stepDraw(cur_x, cur_y) {
 }
 
 function generateMaze() {
-    context.clearRect(0,0,50,50)
+    gridSize = (canvas.getAttribute("width")/2)+1;
+    context.clearRect(0,0,canvas.getAttribute("width"),canvas.getAttribute("width"))
     allowed = {};
     stack = [];
-    gridSize = (canvas.getAttribute("width")/2)+1;
     visited = Array.from({ length: gridSize }, () => Array(gridSize).fill(false));
     stack.push({ x: 0, y: 0 });
     stepDraw(0, 0);
